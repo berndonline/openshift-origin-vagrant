@@ -44,4 +44,4 @@ origin-etcd
 # master needs to be included in the node to be configured in the SDN
 origin-master
 origin-infra openshift_node_labels="{'region': 'infra', 'zone': 'default'}"
-origin-node openshift_node_labels="{'region': 'primary', 'zone': 'default'}"
+origin-node-[1:2] openshift_node_labels="{'region': 'primary', 'zone': 'default'}"

@@ -72,8 +72,25 @@ end
   device.vm.provision :shell , path: "./helper_scripts/config_server.sh"
 end
 
-  config.vm.define "origin-node" do |device|
-    device.vm.host_name = "origin-node"
+  config.vm.define "origin-node-1" do |device|
+    device.vm.host_name = "origin-node-1"
+    device.vm.box = "centos/7"
+
+    device.vm.provider :libvirt do |v|
+      v.memory = 4096
+    end
+  config.vm.synced_folder '.', '/vagrant', disabled: false
+
+  config.vm.boot_timeout = 400
+
+  config.ssh.forward_agent = true
+  config.ssh.guest_port = 22
+  config.ssh.insert_key = false
+  device.vm.provision :shell , path: "./helper_scripts/config_server.sh"
+end
+
+  config.vm.define "origin-node-2" do |device|
+    device.vm.host_name = "origin-node-2"
     device.vm.box = "centos/7"
 
     device.vm.provider :libvirt do |v|
