@@ -19,8 +19,8 @@ openshift_major_version=7
 
 containerized=true
 openshift_install_examples=true
-openshift_metrics_install_metrics=true
-openshift_metrics_start_cluster=true
+openshift_metrics_install_metrics=false
+openshift_metrics_start_cluster=false
 
 
 # use htpasswd authentication with demo/demo
