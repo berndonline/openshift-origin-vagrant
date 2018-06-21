@@ -7,13 +7,21 @@ etcd
 ansible_ssh_user=vagrant
 ansible_become=yes
 
+enable_excluders=false
+openshift_check_min_host_memory_gb=8
+openshift_disable_check=docker_image_availability,docker_storage,disk_availability
+
 deployment_type=origin
-openshift_release=v3.7.0
+openshift_image_tag=v3.7.2
+openshift_release=v3.7.2
+openshift_pkg_version=v3.7.2
+openshift_major_version=7
+
 containerized=true
 openshift_install_examples=true
-enable_excluders=false
-openshift_check_min_host_memory_gb=4
-openshift_disable_check=docker_image_availability,docker_storage,disk_availability
+openshift_metrics_install_metrics=true
+openshift_metrics_start_cluster=true
+
 
 # use htpasswd authentication with demo/demo
 openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider', 'filename': '/etc/origin/master/htpasswd'}]
@@ -38,7 +46,7 @@ ansible_ssh_private_key_file='/home/berndonline/.vagrant.d/insecure_private_key'
 origin-master  openshift_public_hostname="console.lab.hostgate.net"
 
 [etcd]
-origin-etcd
+origin-master
 
 [nodes]
 # master needs to be included in the node to be configured in the SDN

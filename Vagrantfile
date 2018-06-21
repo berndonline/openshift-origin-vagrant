@@ -26,7 +26,7 @@ Vagrant.configure("2") do |config|
     device.vm.box = "centos/7"
 
     device.vm.provider :libvirt do |v|
-      v.memory = 4096
+      v.memory = 8192
     end
   config.vm.synced_folder '.', '/vagrant', disabled: false
 
@@ -43,7 +43,7 @@ end
     device.vm.box = "centos/7"
 
     device.vm.provider :libvirt do |v|
-      v.memory = 4096
+      v.memory = 8192
     end
   config.vm.synced_folder '.', '/vagrant', disabled: false
 
@@ -60,7 +60,7 @@ end
     device.vm.box = "centos/7"
 
     device.vm.provider :libvirt do |v|
-      v.memory = 4096
+      v.memory = 8192
     end
   config.vm.synced_folder '.', '/vagrant', disabled: false
 
@@ -77,7 +77,7 @@ end
     device.vm.box = "centos/7"
 
     device.vm.provider :libvirt do |v|
-      v.memory = 4096
+      v.memory = 8192
     end
   config.vm.synced_folder '.', '/vagrant', disabled: false
 
@@ -94,7 +94,7 @@ end
     device.vm.box = "centos/7"
 
     device.vm.provider :libvirt do |v|
-      v.memory = 4096
+      v.memory = 8192
     end
   config.vm.synced_folder '.', '/vagrant', disabled: false
 
